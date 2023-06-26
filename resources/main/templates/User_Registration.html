@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+   </head>
+   <body>
+	   <div th:if="${error}">
+		  <p th:text="${'User with this email already exists'}"/>
+	  </div>
+	   <form th:action="@{/signup}" method = "post" th:object="${signUpDto}">
+		  <label for="UserMail">Email:</label>
+		  <input type="text" th:field="*{UserMail}"/><br><br>
+		  <label>Password:</label>
+	      <input type="password" th:field="*{Password}"/><br><br>
+		  <label>First Name:</label>
+	      <input type="text" th:field="*{FirstName}"/><br><br>
+	      <label>Middle Name:</label>
+	      <input type="text" th:field="*{MiddleName}"/><br><br>
+	      <label>Last Name:</label>
+	      <input type="text" th:field="*{LastName}"/><br><br>
+	      <label>Phone:</label>
+	      <input type="text" th:field="*{Phone1}"/><br><br>
+	      
+	      <input type="submit" value="Submit"/>
+      </form>
+   </body>
+</html>

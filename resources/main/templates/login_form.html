@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+      
+   </head>
+   <body>
+	   <div th:if="${error}">
+		  <p th:text="${'Invalid Credentials'}"/>
+	  </div>
+	   <form th:action="@{/login}" method = "post">
+		  <label>Mail:</label>
+		  <input type="text" id="UserMail" name="UserMail"/><br><br>
+		  <label>Password:</label>
+		  <input type="password" id="Password" name="Password"/><br><br>
+		  <input type="submit" value="Submit"/>
+      </form>
+      <p>Already registered? <a href="http://localhost:8080/signin">Signup</a></p>
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0, shrink-to-fit=no">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css">
+   </head>
+   <body>
+	   <div class="container">
+	   <div class="row">
+	   <table class="table">
+		   <thead>
+			   <th>Hall Id</th>
+			   <th>Hall Name</th>
+			   <th>Address</th>
+			   <th>City</th>
+			   <th>Phone 1</th>
+			   <th>Pone 2</th>
+			   <th>AC or Non-AC</th>
+			   <th>Price Per Day</th>
+			   <th>Link</th>
+		   </thead>
+		   <tbody>			
+			   <tr th:each="hallList: ${hallList}">
+				   <td th:text="${hallList.hall_id}"></td>
+				   <td th:text="${hallList.hall_name}"></td>
+				   <td th:text="${hallList.address}"></td>
+				   <td th:text="${hallList.city}"></td>
+				   <td th:text="${hallList.phone1}"></td>
+				   <td th:text="${hallList.phone2}"></td>
+				   <td th:text="${hallList.ac_nonac}"></td>
+				   <td th:text="${hallList.price_per_day}"></td>
+				   <td><a th:href="@{/book/{hall_id}/{hall_name}/{AcNonac}/{fromDate}/{toDate}
+	   	(hall_id=${hallList.hall_id},hall_name=${hallList.hall_name},AcNonac=${hallList.ac_nonac},fromDate=${hallList.fromDate},
+	   	toDate=${hallList.toDate})}" style="display:block;">Book</a></td>
+<!--				   <td><a th:href="@{/book/{hall_id}/{AcNonac}/{fromDate}/{toDate}-->
+<!--	   	(hall_id=${hallList.hall_id},AcNonac=${hallList.ac_nonac},fromDate=${hallList.fromDate},toDate=${hallList.toDate})}"</td>-->
+			   </tr>
+		   </tbody>
+	   </table>
+	   </div>
+	   </div>
+   </body>
+</html>

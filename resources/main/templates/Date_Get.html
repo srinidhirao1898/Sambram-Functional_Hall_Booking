@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+      <p>* Booking Starts From "From Date" 5:00PM and Ends at "To Date" 5:00PM </p>
+      <h1 th:if="${error}">
+		  <p th:text="${'Please Enter Date greater than today'}"/>
+	  </h1>
+   </head>
+   <body>
+	   <form th:action="@{/Gethall}" method = "post">
+		  <label for="fromDate">From Date:</label>
+		  <input type="date" id="fromDate" th:name="fromDate"/><br><br>
+		  <label for="toDate">To Date:</label>
+		  <input type="date" id="toDate" th:name="toDate"/><br><br>
+		  <input type="submit" value="Submit"/>
+      </form>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+   </head>
+   <body>
+	   <div th:each="hallId:${hallId}">
+	   		<p>Hall: <span th:text="${hallId.hall_name}"></span></p>
+	   		<p>AC/Non AC: <span th:text="${hallId.AcNonac}"></span></p>
+	   		<p>From Date: <span th:text="${hallId.fromDate}"></span></p>
+	   		<p>To Date: <span th:text="${hallId.toDate}"></span></p>
+	   </div>
+	   <form th:action="@{/book/{hall_id}/{hall_name}/{AcNonac}/{fromDate}/{toDate}
+	   	(hall_id=${hallId.hall_id},hall_name=${hallId.hall_name},AcNonac=${hallId.AcNonac},fromDate=${hallId.fromDate},toDate=${hallId.toDate})}" 
+	   	method = "post">
+<!--		  <label for="UserMail">Mail:</label>-->
+<!--		  <input type="text" id="UserMail" th:name="UserMail"/><br><br>-->
+		  <!--<label for="AcNonac">AC/Non AC:</label>
+		  <input type="text" id="AcNonac" th:name="AcNonac"/><br><br>
+		  <label for="fromDate">From Date:</label>
+		  <input type="date" id="fromDate" th:name="fromDate"/><br><br>
+		  <label for="toDate">To Date:</label>
+		  <input type="date" id="toDate" th:name="toDate"/><br><br>-->
+		  <label for="AdvancePaid">Advance:</label>
+		  <input type="number" id="AdvancePaid" th:name="AdvancePaid"/><br><br>
+		  <input type="submit" value="Submit"/>
+		</form>
+		
+   </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+      <a href="http://localhost:8080/Home">Home</a><br><br>
+   </head>
+   <body>
+	   <form th:action="@{/Register/FuncHall}" method = "post">
+		  <label for="HallName">Name:</label>
+		  <input type="text" id="HallName" th:name="HallName"/><br><br>
+		  <label for="Address1">Address Line 1:</label>
+		  <input type="text" id="Address1" th:name="Address1"/><br><br>
+		  <label for="Address2">Address Line 2:</label>
+		  <input type="text" id="Address2" th:name="Address2"/><br><br>
+	      <label for="Area1">Area:</label>
+		  <input type="text" id="Area1" th:name="Area1"/><br><br>
+	      <label for="City">City:</label>
+		  <input type="text" id="City" th:name="City"/><br><br>
+		  <label for="Pincode">Pincode:</label>
+		  <input type="text" id="Pincode" th:name="Pincode"/><br><br>
+	      <label for="Phone1">Phone 1:</label>
+	      <input type="text" id="Phone1" th:name="Phone1"/><br><br>
+	      <label for="Phone2">Phone 2:</label>
+	      <input type="text" id="Phone2" th:name="Phone2"/><br><br>
+	      <input type="submit" value="Submit"/>
+      </form>
+   </body>
+</html>

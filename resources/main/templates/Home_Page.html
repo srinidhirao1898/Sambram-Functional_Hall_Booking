@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Sambram</title>
+   </head>
+   <body>
+	   <div th:if="${alreadylogin}">
+		  <p th:text="${'You have already loged in'}"/>
+	   </div>
+	   <a href="http://localhost:8080/Register/FuncHall">Reister Function Hall</a><br><br>
+	   <a href="http://localhost:8080/login">Login</a><br><br>
+	   <a href="http://localhost:8080/signup">Signup</a><br><br>
+	   <a href="http://localhost:8080/Gethall">Book Hall</a>
+	</body>
+</html>
